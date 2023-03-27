@@ -1,0 +1,17 @@
+pipeline {
+    options {
+        timeout(time: 15, unit: 'MINUTES')
+    }
+
+    agent any
+
+    stages {
+        stage('Stage 1') {
+            steps {
+                sh """
+                   python3.9 start.py 
+                   """
+            }
+        }
+    }
+}
